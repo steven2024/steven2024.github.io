@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shartification™</title>
+    <style>
+:root { --accent: rgba(126,87,194,0.9); --hover: #5e35b1; --list-marker-color: #7e57c2; --font: 'Segoe UI', sans-serif; --bg: #121212; --fg: #e0e0e0;
+  --card: #1e1e1e; --card-border: #333; --quote-bg: #1a1a1a; --quote-fg: #ccc; --footer-bg: #1c1c1c; --footer-fg: #888; --header-shadow: rgba(0,0,0,0.5);
+  --toggle-bg: #444; --toggle-thumb: #fff; --toggle-active-bg: #666; }
+body.light-mode { --bg: #f4f4f9; --fg: #212121; --card: #ffffff; --card-border: #e0e0e0; --quote-bg: #f0f0f0;
+  --quote-fg: #444; --footer-bg: #eaeaea; --footer-fg: #666; --header-shadow: rgba(0,0,0,0.1); --toggle-bg: #ccc; --toggle-active-bg: #bbb; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font); line-height: 1.6; scroll-behavior: smooth;
+  transition: background 0.3s ease, color 0.3s ease; }
+header { background: var(--accent); color: #fff; padding: 1rem 2rem; display: flex; justify-content: space-between;
+  align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 6px var(--header-shadow); }
+nav a { margin-left: 1.5rem; text-decoration: none; color: #fff; font-weight: 600; transition: color 0.3s ease; }
+nav a:hover { color: var(--hover); }
+.toggles { display: flex; align-items: center; }
+.dark-mode-toggle,
+.yap-mode-toggle { display: flex; align-items: center; margin-left: 1rem; }
+.dark-mode-toggle input[type="checkbox"],
+.yap-mode-toggle input[type="checkbox"] { height: 0; width: 0; visibility: hidden; }
+.dark-mode-toggle label { cursor: pointer; text-indent: -9999px; width: 50px; height: 26px; background: var(--toggle-bg);
+  display: block; border-radius: 100px; position: relative; transition: background 0.3s ease; }
+.dark-mode-toggle label:after { content: ''; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px;
+  background: var(--toggle-thumb); border-radius: 90px; transition: 0.3s ease; }
+.dark-mode-toggle input:checked + label { background: var(--toggle-active-bg); }
+.dark-mode-toggle input:checked + label:after { left: calc(100% - 3px); transform: translateX(-100%); }
+.dark-mode-toggle label:active:after { width: 28px; }
+.yap-mode-toggle label { cursor: pointer; background: var(--accent); color: #fff; padding: 0.5rem 1rem;
+  border-radius: 4px; font-weight: bold; transition: background 0.3s ease; }
+.yap-mode-toggle label:hover { background: var(--hover); }
+.section { max-width: 900px; margin: 2rem auto; padding: 1.5rem; background: var(--card); border: 1px solid var(--card-border);
+  border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); margin-bottom: 2rem;
+  transition: background 0.3s ease, border 0.3s ease; }
+.section h2 { margin-top: 0; font-size: 1.8rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; }
+.custom-list { list-style: none; padding-left: 1.5rem; }
+.custom-list li { position: relative; margin-bottom: 0.75rem; }
+.custom-list li::before { content: "•"; position: absolute; left: -1.2rem; color: var(--list-marker-color); }
+.embedded-gif { display: block; max-width: 100%; margin: 1rem auto; border: 2px solid var(--accent); border-radius: 8px; }
+blockquote { background: var(--quote-bg); color: var(--quote-fg); padding: 1rem; border-left: 4px solid var(--accent);
+  font-style: italic; margin: 1.5rem 0; transition: background 0.3s ease, color 0.3s ease; }
+footer { text-align: center; padding: 1rem; background: var(--footer-bg); color: var(--footer-fg); font-size: 0.9rem;
+  transition: background 0.3s ease, color 0.3s ease; }
+.roach-cursor { position: fixed; pointer-events: none; font-size: 24px; opacity: 1; animation: roachFade 1s forwards; z-index: 10000; }
+@keyframes roachFade { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-20px); } }
+html {
+  scroll-padding-top: 80px;
+}
+    </style>
+  </head>
+  <body>
+    <header>
+      <div><strong>Shartification™</strong></div>
+      <nav>
+        <a href="#timeline">Timeline</a>
+        <a href="#group">Group and Memes</a>
+        <a href="#shartcraft">Shartcraft</a>
+        <a href="#identity">Identity Crisis</a>
+        <a href="#login">Login</a>
+      </nav>
+      <div class="toggles">
+        <div class="dark-mode-toggle">
+          <input type="checkbox" id="toggle" /><label for="toggle"></label>
+        </div>
+        <div class="yap-mode-toggle">
+          <input type="checkbox" id="yap-toggle" /><label for="yap-toggle">YAP</label>
+        </div>
+      </div>
+    </header>
+    <section class="section" id="timeline">
+      <h2>Shartification Timeline</h2>
+      <p>This is the uncut history of our Shartification™ madness a saga of code chaos and constant jabs. Every single detail is here exactly as it happened.</p>
+      <h3>1. The Rise of vlOd and Code Laundering (2024)</h3>
+      <p>In 2024 vlOd began by aggressively porting Minecraft from Java to C# using raw determination. Not content with a simple port he started what we now call vlOdification or Shartification™ a process of restructuring (laundering) and even port decompiled Minecraft code. To rally the crew he created the vlOdification Station Discord server which was branched off from Omniarchive for the Shartification™ group that was part development zone part ideology center. Out of the Shartification™ chaos came projects such as Shartcraft and Dotcraft and even the phrase ChatGPT laundering appeared when people began using AI to refactor our code.</p>
+      <h3>2. Anti Steve Policies and the SteveGPT Saga</h3>
+      <p>It did not take long for me STEVE2024 to become the subject of quiet targeting. The community introduced anti Steve policies with tactics such as feature cycling simply to annoy me. My 2011 iMac running Windows XP was mockingly dubbed the ChatGPT Workstation and shady role shuffles were common. Soon people started calling me SteveGPT because vlOd said so. This sparked an internal joke called the Steve Containment Policies.</p>
+      <h3>3. The Birth of Yap Presidency (Late 2024 Early 2025)</h3>
+      <p>During voice calls, both me and icanttellyou (icty) would stay muted for a long time. Then out of nowhere, one of us would just unmute and start yapping about something random. That’s when vlOd started calling us the Yap Presidents. Not because we talked a lot, but because we didn’t say anything for hours, then suddenly started rambling. Yap Syndrome just meant you were muted all the time but when you finally spoke, it was something weird or cursed. It wasn’t a title, just a thing people said.</p>
+      <h3>4. The Collapse of vlOdification Station (Early 2025)</h3>
+      <p>Then out of nowhere, vlOd just disappeared with no explanation and blocked almost everyone. Only maxxx and some random :3 were still unblocked. Projects like Dotcraft just vanished unless someone had backups on their drive. The builds channel wasn’t even there anymore since it got wiped when vlOd nuked vlOdification Station. No final message, nothing. That was the end of the vlOd era.</p>
+      <h3>5. The Post Collapse Yap Era (Mid 2025)</h3>
+      <p>After the server collapsed everything just kinda stopped. Then vlOd disappeared too. All the lore ended up on Omniarchive and that was the only place anything survived. The Shartification™ group was the only thing left. People still drop old screenshots cursed commits and random quotes. Some still blame SteveGPT for the collapse. DanilWaffle kept showing up fixing stuff that didn’t need fixing and sending roach emojis like nothing happened.</p>
+      <img class="embedded-gif" src="https://media1.tenor.com/m/AR8TAXckMLkAAAAd/roach.gif" alt="Roach Meme">
+    </section>
+    <section class="section" id="group">
+      <h2>Group and Memes</h2>
+      <p>The crew that emerged in Shartification™ is unforgettable. Here is who is who in our little family:</p>
+      <ul class="custom-list">
+        <li><strong>Generic PnP Monitor (PnP)</strong> is the keeper of our shartification toolkit (jruntime, soundsystem, lwcsglx)</li>
+        <li><strong>Blizzardfur Maxxx</strong> was never blocked by vlOd and spams VRChat screenshots of himself</li>
+        <li><strong>icanttellyou :3 (icty)</strong> used to be titled "yap president" remembered for shouting "SHUT UP" and sleep deprived quotes</li>
+        <li><strong>Mao Zedong (pankine)</strong> always dropping the line "bro is not shredder" when roach emojis get sent in #bc-text</li>
+        <li><strong>danilWaffle, danil, Intel R WiFi</strong> is known as the Bedwars Sweat a fixer and haunter who gets called sweat by pankine (Mao Zedong) and shredder every time those infamous roach emojis are sent</li>
+        <li><strong>Emojis</strong> like the Roach (🪳) Warning (⚠️) and Lock (🔐) became symbols of bugs secrecy and corrupted lore When used identity confusion follows with shredder saying you are not danil and Mao retorting you are not shredder</li>
+      </ul>
+    </section>
+    <section class="section" id="shartcraft">
+      <h2>Shartcraft</h2>
+      <p>No version of Shartcraft is complete without the infamous outburst about Shartcraft When a build goes wrong this exact monologue is repeated without fail:</p>
+      <blockquote>
+        Doctor Freeman, this is undoubtedly the worst shartcraft I have ever laid eyes on. It is rather disappointing to observe the incorporation of MCP, a mappings of notably poor quality. Usage of the OpenTK, along with its adoption of delayed input response, is perplexing. The abscence of reviewed code, converted using console application written in 10 minutes, coupled with everything being in the single namespace, further contributes to its inadequacy. Additionally, the incorrect save format port exacerbates the overall deficiency. Regrettably, I could not refrain from expressing my discontent with this iteration of shartcraft.
+      </blockquote>
+      <p>This exact rant is dropped after any disastrous Shartcraft build and has become our benchmark of disappointment.</p>
+    </section>
+    <section class="section" id="identity">
+      <h2>Identity Crisis and Last Notes</h2>
+      <p>This is where the truth is laid bare:</p>
+      <ul class="custom-list">
+        <li>vlOd once called icty and me the schizophrenia yap presidents duo</li>
+        <li>I AM STEVE2024 and that has been confirmed time and again</li>
+        <li>Even though icty is no longer Yap President everyone still calls me a Bedwars sweat</li>
+        <li>There are no memes left in Omniarchive it is the sole keeper of our lore</li>
+        <li>After I send roach emojis Mao Zedong tells me I am not shredder and earlier shredder said I am not danil because of the same emoji antics</li>
+        <li>Pankine (Mao Zedong) and shredder both agree that I am a sweat a proper Bedwars sweat</li>
+        <li>And let us not forget that classic Shartcraft rant</li>
+        <li>Also vlOd called both icty and me the schizophrenia yap presidents duo</li>
+      </ul>
+      <p style="font-weight:bold;">I AM STEVE2024</p>
+      <img class="embedded-gif" src="https://media1.tenor.com/m/qfIpInVlLaoAAAAd/warning-warning-emoji.gif" alt="Warning Meme">
+    </section>
+    <section class="section" id="login">
+      <h2>Portal Login</h2>
+      <p>This portal is for those in the know Only straight authentication is required no registration</p>
+      <form style="display:flex; flex-direction:column; gap:0.8rem; max-width:300px; margin:0 auto;">
+        <input type="text" placeholder="Username (🪳 if steve, runtime will combust)" style="padding:0.75rem; border:1px solid #ccc; border-radius:4px;">
+        <input type="password" placeholder="Runtime Key" style="padding:0.75rem; border:1px solid #ccc; border-radius:4px;">
+        <button type="submit" style="padding:0.8rem; background:var(--accent); border:none; border-radius:4px; color:#fff; font-weight:bold; cursor:pointer;">Authenticate</button>
+      </form>
+      <p style="text-align:center; font-size:0.9rem;">Need help? This isn't the ChatGPT Workstation, figure it out like danil would 🪳</p>
+    </section>
+    <footer>
+      &copy; 2025 Shartification™ Ported with love from legacy Java ❤️
+    </footer>
+    <script>
+var darkToggle = document.getElementById("toggle"), yapToggle = document.getElementById("yap-toggle");
+window.addEventListener("DOMContentLoaded", function(){
+  var savedTheme = localStorage.getItem("theme") || "dark";
+  if(savedTheme==="light"){ document.body.classList.add("light-mode"); darkToggle.checked = true; }
+  else { document.body.classList.remove("light-mode"); darkToggle.checked = false; }
+  var savedYap = localStorage.getItem("yap-mode") || "off";
+  if(savedYap==="on"){ document.body.classList.add("yap-mode"); yapToggle.checked = true; enableRoachTrail(); }
+  else { document.body.classList.remove("yap-mode"); yapToggle.checked = false; }
+});
+darkToggle.addEventListener("change", function(){
+  if(darkToggle.checked){ document.body.classList.add("light-mode"); localStorage.setItem("theme","light"); }
+  else { document.body.classList.remove("light-mode"); localStorage.setItem("theme","dark"); }
+});
+yapToggle.addEventListener("change", function(){
+  if(yapToggle.checked){ document.body.classList.add("yap-mode"); localStorage.setItem("yap-mode","on"); enableRoachTrail(); }
+  else { document.body.classList.remove("yap-mode"); localStorage.setItem("yap-mode","off"); disableRoachTrail(); }
+});
+function enableRoachTrail(){ document.addEventListener("mousemove", roachTrailHandler); }
+function disableRoachTrail(){ document.removeEventListener("mousemove", roachTrailHandler); }
+var lastRoachTime = 0;
+function roachTrailHandler(e){
+  var now = Date.now();
+  if(now - lastRoachTime < 45) return;
+  lastRoachTime = now;
+  var roach = document.createElement("span");
+  roach.classList.add("roach-cursor");
+  roach.textContent = "🪳";
+  roach.style.left = e.clientX + "px";
+  roach.style.top = e.clientY + "px";
+  document.body.appendChild(roach);
+  setTimeout(function(){ roach.remove(); }, 1000);
+}
+    </script>
+  </body>
+</html>
